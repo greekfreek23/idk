@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dynamic Electrician Site</title>
+
+  <!-- Font Awesome for star icons, optional for social links -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-ac1pXnc7oV4C/7Z5CQyS71jvViRAfBhMq+SVQg2+p8m6v10wY0lAWBwI64mx7muZlHWoXLzmj0W1U8Sd70pXKw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header id="pageHeader">
+    <div class="header-inner">
+      <!-- Logo or Business Name -->
+      <div id="logoArea" class="logo-area">Business Name</div>
+
+      <!-- Navigation -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#heroSection">Home</a></li>
+          <li><a href="#aboutSection">About</a></li>
+          <li><a href="#servicesSection">Services</a></li>
+          <li><a href="#reviewsSection">Reviews</a></li>
+          <li><a href="#gallerySection">Gallery</a></li>
+          <li><a href="#locationSection">Location</a></li>
+          <li><a href="#contactSection">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO / SLIDESHOW -->
+  <section id="heroSection" class="hero-section">
+    <div id="heroSlidesContainer" class="hero-slides-container">
+      <!-- Slides injected by script.js -->
+    </div>
+    <!-- Next/Prev Arrows -->
+    <button id="prevSlideBtn" class="slide-arrow prev">&#10094;</button>
+    <button id="nextSlideBtn" class="slide-arrow next">&#10095;</button>
+  </section>
+
+  <!-- ABOUT (Slideshow + Paragraph) -->
+  <section id="aboutSection" class="about-section">
+    <h2>About Us</h2>
+    <!-- Simple paragraphs referencing actual JSON data in script.js -->
+    <p class="about-text">
+      <strong id="dynamicBusinessName">Business Name</strong> offers residential, commercial, 
+      and industrial electrical solutions to <span id="dynamicCity">Your City</span> 
+      and surrounding areas. No job is too big or too small—reliable and safe 
+      work is our top priority.
+    </p>
+    <p class="about-text">
+      From small home repairs to large-scale commercial projects, our team 
+      stays committed to innovation, integrity, and customer satisfaction.
+    </p>
+
+    <!-- About Slideshow Container -->
+    <div id="aboutSlidesContainer" class="about-slides-container"></div>
+    <!-- Arrows for About Slideshow -->
+    <button id="prevAboutSlideBtn" class="slide-arrow prev about-arrow">&#10094;</button>
+    <button id="nextAboutSlideBtn" class="slide-arrow next about-arrow">&#10095;</button>
+  </section>
+
+  <!-- SERVICES SECTION (unchanged, except no “ Now” in header) -->
+  <section id="servicesSection" class="services-section">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <!-- Service Item 1 -->
+      <div class="service-item">
+        <div class="service-icon">🔌</div>
+        <h3>Panel Upgrades & Repairs</h3>
+        <p>Keep your system safe and efficient with modern upgrades & reliable repairs.</p>
+      </div>
+
+      <!-- Service Item 2 -->
+      <div class="service-item">
+        <div class="service-icon">💡</div>
+        <h3>Lighting Design & Installation</h3>
+        <p>Transform any space with customized lighting plans for ambiance and energy savings.</p>
+      </div>
+
+      <!-- Service Item 3 -->
+      <div class="service-item">
+        <div class="service-icon">🔧</div>
+        <h3>Wiring & Rewiring</h3>
+        <p>Ensure dependable power with code-compliant wiring for new and existing structures.</p>
+      </div>
+
+      <!-- Service Item 4 -->
+      <div class="service-item">
+        <div class="service-icon">⚡</div>
+        <h3>Outlet & Switch Replacement</h3>
+        <p>Upgrade to safer outlets & switches, including modern USB-enabled solutions.</p>
+      </div>
+
+      <!-- Service Item 5 -->
+      <div class="service-item">
+        <div class="service-icon">🌐</div>
+        <h3>Surge Protection Systems</h3>
+        <p>Safeguard electronics with comprehensive whole-home surge protection.</p>
+      </div>
+
+      <!-- Service Item 6 -->
+      <div class="service-item">
+        <div class="service-icon">🔥</div>
+        <h3>Emergency Repairs</h3>
+        <p>24/7 prompt response for urgent electrical issues to restore safety and power.</p>
+      </div>
+
+      <!-- Service Item 7 -->
+      <div class="service-item">
+        <div class="service-icon">🌳</div>
+        <h3>Outdoor & Landscape Lighting</h3>
+        <p>Enhance security and curb appeal with expertly designed outdoor lighting.</p>
+      </div>
+
+      <!-- Service Item 8 -->
+      <div class="service-item">
+        <div class="service-icon">🏠</div>
+        <h3>Smart Home Integration</h3>
+        <p>Modernize living spaces with automation and seamless device connectivity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS (Slideshow) -->
+  <section id="reviewsSection" class="reviews-section" aria-label="Customer Reviews">
+    <h2>Customer Reviews</h2>
+
+    <!-- Slideshow container (ARIA roles for advanced logic) -->
+    <div id="reviewsSlidesContainer" class="reviews-slides-container" role="region" aria-live="polite"></div>
+
+    <button id="prevReviewSlideBtn" class="slide-arrow prev review-arrow" aria-label="Previous review">
+      <span aria-hidden="true">&#10094;</span>
+    </button>
+    <button id="nextReviewSlideBtn" class="slide-arrow next review-arrow" aria-label="Next review">
+      <span aria-hidden="true">&#10095;</span>
+    </button>
+
+    <div id="reviewsLinkArea" class="reviews-link-area"></div>
+  </section>
+
+  <!-- GALLERY (Slideshow) -->
+  <section id="gallerySection" class="gallery-section">
+    <h2>Project Gallery</h2>
+    <div id="gallerySlidesContainer" class="gallery-slides-container"></div>
+    <button id="prevGallerySlideBtn" class="slide-arrow prev gallery-arrow">&#10094;</button>
+    <button id="nextGallerySlideBtn" class="slide-arrow next gallery-arrow">&#10095;</button>
+  </section>
+
+  <!-- LOCATION / SERVICE AREA -->
+  <section id="locationSection" class="location-section">
+    <h2>Location & Service Area</h2>
+    <div id="serviceAreaInfo" class="service-area-info"></div>
+    <div id="mapArea" class="map-area"></div>
+  </section>
+
+  <!-- CONTACT SECTION (Form) -->
+  <section id="contactSection" class="contact-section">
+    <h2>Contact Us</h2>
+    <p class="contact-intro">
+      Ready to get started or have questions? Fill out the form below, 
+      and we'll be in touch as soon as possible.
+    </p>
+    <form id="contactForm" class="contact-form">
+      <div class="form-group">
+        <label for="formName">Name</label>
+        <input type="text" id="formName" name="formName" required />
+      </div>
+      <div class="form-group">
+        <label for="formEmail">Email</label>
+        <input type="email" id="formEmail" name="formEmail" required />
+      </div>
+      <div class="form-group">
+        <label for="formMessage">How can we help you?</label>
+        <textarea id="formMessage" name="formMessage" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <div id="footerContent" class="footer-content">
+      <!-- Footer content injected by script.js -->
+    </div>
+    <div class="footer-bottom">
+      <ul class="footer-socials">
+        <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+      <p>&copy; <span id="footerYear"></span> All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
