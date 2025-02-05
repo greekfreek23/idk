@@ -486,3 +486,13 @@ img {
   background-color: var(--accent-color);
 }
 
+
+
+/* Hero slide text spacing enhancements */
+.hero-section .slide-content {
+  padding: 2rem 3rem;
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
