@@ -68,7 +68,7 @@ fetch(DATA_URL)
 
     const business = data[businessId];
     renderHeader(business);
-    renderHero(business.sections?.hero || []);
+    renderHero(business.sections?.hero || [], business.businessInfo);
     renderAboutSlideshow(business.sections?.aboutUs || []);
     renderReviewsSlideshow(business.reviews || [], business.businessInfo);
     renderGallerySlideshow(business.sections?.gallery || []);
@@ -118,7 +118,7 @@ function renderHeader(business) {
 /* --------------------------------
    2) Hero Slideshow
 -------------------------------- */
-function renderHero(heroArr) {
+function renderHero(heroArr, businessInfo) {
   slidesData = heroArr;
   if (!slidesData.length) {
     heroContainer.innerHTML = "<div style='padding:1rem;'>No Hero Slides Available.</div>";
@@ -131,6 +131,10 @@ function renderHero(heroArr) {
     <div class="slide" style="background-image: url('${item.imageIndex}')">
       <div class="slide-content">
         <h2>${item.callToAction || "Electrical Solutions"}</h2>
+        <div class="cta-buttons">
+          ${'${'}businessInfo && businessInfo.phone ? `<a href="tel:${'${'}businessInfo.phone}" class="cta-button call-now">Call Now</a>` : ""}
+          <a href="#contactSection" class="cta-button request-quote">Request a Quote</a>
+        </div>
       </div>
     </div>
   `).join("");
@@ -140,7 +144,7 @@ function renderHero(heroArr) {
   nextSlideBtn.onclick = nextSlide;
 
   if (slideInterval) clearInterval(slideInterval);
-  slideInterval = setInterval(nextSlide, 6000); // 6s
+  slideInterval = setInterval(nextSlide, 6000);
 }
 
 function showSlide(index) {
