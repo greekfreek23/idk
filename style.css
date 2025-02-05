@@ -71,11 +71,16 @@ img {
 .nav-links a {
   text-decoration: none;
   color: var(--secondary-color);
-  font-weight: 500;
-  transition: color var(--transition-speed);
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 .nav-links a:hover {
-  color: var(--accent-color);
+  background-color: var(--accent-color);
+  color: var(--dark-color);
 }
 
 /* HERO */
@@ -458,3 +463,26 @@ img {
     display: none; /* hide hero arrows on narrower screens if you like */
   }
 }
+
+
+.cta-buttons {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.cta-button {
+  display: inline-block;
+  margin: 0 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--accent-color);
+}
+
